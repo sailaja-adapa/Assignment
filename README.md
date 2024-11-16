@@ -1,5 +1,4 @@
 
-Here's the complete and formatted version of the README file for you to copy-paste:
 
 How to Run the Project Locally
 Prerequisites
@@ -12,7 +11,7 @@ Open your terminal and clone the project repository:
 
 bash
 Copy code
-git clone https://github.com/sailaja-adapa/Shresta.git
+git clone https://github.com/sailaja-adapa/Assignment.git
 cd Shresta
 Install Dependencies
 
