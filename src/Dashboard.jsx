@@ -4,13 +4,19 @@ const Dashboard = () => {
     return (
         <div
             className="relative h-screen bg-cover bg-center"
-            style={{ backgroundImage: "url('https://img.freepik.com/free-photo/scene-with-photorealistic-logistics-operations-proceedings_23-2151468862.jpg?size=626&ext=jpg&ga=GA1.1.1861036275.1716800359&semt=ais_hybrid-rr-similar')" }}
+            style={{
+                backgroundImage:
+                    "url('https://img.freepik.com/free-photo/scene-with-photorealistic-logistics-operations-proceedings_23-2151468862.jpg?size=626&ext=jpg&ga=GA1.1.1861036275.1716800359&semt=ais_hybrid-rr-similar')"
+            }}
         >
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Our Logistics Platform</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Our Website</h1>
                 <p className="text-lg md:text-xl mb-6 text-center px-4">
-                    Your one-stop solution for on-demand transportation services. 
-                    Book, track, and manage your shipments seamlessly.
+                Revolutionize the way you organize your contacts :)
+                </p>
+                <p className="text-lg md:text-xl mb-6 text-center px-4">
+                    Let’s redefine how you manage your contacts. Register or log in to explore 
+                    powerful features designed to simplify your work!
                 </p>
                 <div className="flex space-x-4">
                     <button
@@ -25,6 +31,7 @@ const Dashboard = () => {
                     >
                         Login
                     </button>
+                   
                 </div>
             </div>
         </div>
