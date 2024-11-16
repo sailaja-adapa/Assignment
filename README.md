@@ -1,3 +1,58 @@
+How to Run the Project Locally
+Prerequisites
+Node.js and npm (Node Package Manager) should be installed on your machine.
+MongoDB (either locally or using MongoDB Atlas for a cloud database).
+Steps to Run the Project
+Clone the Repository Open your terminal and clone the project repository:
+
+bash
+Copy code
+git clone https://github.com/sailaja-adapa/Shresta.git
+cd Shresta
+Install Dependencies
+
+For the Frontend (React app):
+
+bash
+Copy code
+cd contact
+npm install
+For the Backend (Node.js server):
+
+bash
+Copy code
+cd ../backend
+npm install
+Setup MongoDB
+
+If you're using MongoDB Atlas (cloud version), create a MongoDB cluster and get the connection string.
+If you're using local MongoDB, ensure that MongoDB is installed and running on your machine.
+Configure MongoDB URI
+
+In the backend folder, create a .env file and add your MongoDB connection string:
+plaintext
+Copy code
+MONGODB_URI=your_mongodb_connection_string
+Start the Backend Server Open a terminal in the backend folder and run the server:
+
+bash
+Copy code
+cd backend
+node server.js
+Start the Frontend Open a new terminal in the contact folder and run the React app:
+
+bash
+Copy code
+cd contact
+npm start
+Access the Application Once both the frontend and backend are running, open your browser and go to:
+
+plaintext
+Copy code
+http://localhost:3000
+You'll see the contact management app in action!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
