@@ -25,7 +25,7 @@ function ContactForm() {
     if (firstName && lastName && email && phone && company && jobTitle) {
       try {
         // Send data to backend
-        const response = await fetch('https://assignment-mauve-ten.vercel.app/api/contactdetails', {
+        const response = await fetch('https://assignment-1-6f4b.onrender.com/api/contactdetails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
