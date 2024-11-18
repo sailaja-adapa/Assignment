@@ -74,7 +74,7 @@ function ContactsTable() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/contactdetails/${id}`, {
+      const response = await fetch(`https://assignment-1-6f4b.onrender.com/api/contactdetails/${id}`, {
         method: 'DELETE'
       });
       if (response.ok) {
