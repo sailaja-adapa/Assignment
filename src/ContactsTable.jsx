@@ -20,7 +20,7 @@ function ContactsTable() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/contactdetails');
+        const response = await fetch('https://assignment-mauve-ten.vercel.app/api/contactdetails');
         const data = await response.json();
         setContacts(data);
       } catch (error) {
@@ -57,7 +57,7 @@ function ContactsTable() {
 
   const handleEditSave = async () => {
     try {
-      const response = await fetch(`http://localhost:5001/api/contactdetails/${editContact._id}`, {
+      const response = await fetch(`https://assignment-mauve-ten.vercel.app/api/contactdetails/${editContact._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editContact)
@@ -74,7 +74,7 @@ function ContactsTable() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://assignment-1-6f4b.onrender.com/api/contactdetails/${id}`, {
+      const response = await fetch(`https://assignment-mauve-ten.vercel.app/api/contactdetails/${id}`, {
         method: 'DELETE'
       });
       if (response.ok) {
