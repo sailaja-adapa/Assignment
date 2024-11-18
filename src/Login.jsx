@@ -20,7 +20,7 @@ const Login = () => {
         e.preventDefault();
         try {
             // Send login request to backend
-            const response = await axios.post('http://localhost:5001/login', formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, formData);
             const { message, redirectUrl, token } = response.data;
 
             // Store token in local storage
