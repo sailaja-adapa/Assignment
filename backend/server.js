@@ -9,12 +9,8 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from localhost:3000
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type'], // Allowed headers
-  }));
-  app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.json());
 
 // MongoDB schema for User registration
 const UserSchema = new mongoose.Schema({
