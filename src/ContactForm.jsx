@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Box, Grid, TextField, Button, Typography, Paper, Snackbar, Alert } from '@mui/material';
 
 function ContactForm() {
@@ -24,25 +25,18 @@ function ContactForm() {
 
     if (firstName && lastName && email && phone && company && jobTitle) {
       try {
-        // Send data to backend
-        const response = await fetch('https://assignment-1-6f4b.onrender.com/api/contactdetails', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+        // Send data to backend using axios
+        const response = await axios.post(
+          'http://assignment-1-6f4b.onrender.com/api/contactdetails',
+          formData,
+          { headers: { 'Content-Type': 'application/json' } }
+        );
 
-        const result = await response.json();
-        if (response.ok) {
-          setToast({ open: true, severity: 'success', message: 'Details submitted successfully!' });
-          setFormData({ firstName: '', lastName: '', email: '', phone: '', company: '', jobTitle: '' });
-        } else {
-          setToast({ open: true, severity: 'error', message: result.error });
-        }
+        setToast({ open: true, severity: 'success', message: 'Details submitted successfully!' });
+        setFormData({ firstName: '', lastName: '', email: '', phone: '', company: '', jobTitle: '' });
       } catch (error) {
-        console.error(error);
-        setToast({ open: true, severity: 'error', message: 'An error occurred, please try again later.' });
+        const errorMessage = error.response?.data?.error || 'An error occurred, please try again later.';
+        setToast({ open: true, severity: 'error', message: errorMessage });
       }
     } else {
       setToast({ open: true, severity: 'error', message: 'Please fill in all fields.' });
@@ -58,8 +52,8 @@ function ContactForm() {
       sx={{
         minHeight: '100vh',
         display: 'flex',
-        alignItems: 'center', // Centered vertically
-        justifyContent: 'flex-start', // Aligned to the left
+        alignItems: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: '#f5f5f5',
         backgroundImage: 'url(https://img.freepik.com/free-photo/vintage-pink-telephone-composition_23-2148913955.jpg)',
         backgroundSize: 'cover',
@@ -76,7 +70,7 @@ function ContactForm() {
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
           borderRadius: 4,
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          marginLeft: '90px', // Move the container slightly to the right
+          marginLeft: '90px',
           '&:hover': {
             transform: 'scale(1.02)',
             boxShadow: '0px 0px 20px 8px rgba(255, 255, 255, 0.6)',
@@ -174,7 +168,6 @@ function ContactForm() {
           </Grid>
         </form>
         
-        {/* Toast for Success or Error */}
         <Snackbar
           open={toast.open}
           autoHideDuration={4000}

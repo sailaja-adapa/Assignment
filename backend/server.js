@@ -99,31 +99,43 @@ app.post('/login', async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 });
-app.post('/contactdetails', (req, res) => {
-    const { name, email, message } = req.body;
-  
-    // Validate the incoming data
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'All fields are required!' });
+
+// Add contact details
+app.post('/api/contactdetails', async (req, res) => {
+    const { firstName, lastName, email, phone, company, jobTitle } = req.body;
+
+    if (!firstName || !lastName || !email || !phone || !company || !jobTitle) {
+        return res.status(400).json({ error: 'All fields are required' });
     }
-  
-    // Simulate saving the data (replace with a database save if needed)
-    console.log('Received data:', { name, email, message });
-  
-    // Respond with a success message
-    res.status(200).json({ success: true, message: 'Contact details received!' });
-  });
-  
-  // Fallback for unsupported HTTP methods on /contactdetails
-  app.all('/contactdetails', (req, res) => {
-    res.status(405).json({ error: 'Method Not Allowed' });
-  });
-  
-  // Default route for unmatched endpoints
-  app.use((req, res) => {
-    res.status(404).json({ error: 'Route not found' });
-  });
-  
+
+    try {
+        const newContact = new ContactDetails({
+            firstName,
+            lastName,
+            email,
+            phone,
+            company,
+            jobTitle,
+        });
+
+        await newContact.save();
+        res.status(201).json({ message: 'Contact details submitted successfully!' });
+    } catch (err) {
+        console.error('Error saving contact details:', err);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+// Get all contact details
+app.get('/api/contactdetails', async (req, res) => {
+    try {
+        const contacts = await ContactDetails.find({});
+        res.status(200).json(contacts);
+    } catch (err) {
+        console.error('Error fetching contact details:', err);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
 
 // Update contact details
 app.put('/api/contactdetails/:id', async (req, res) => {
