@@ -115,11 +115,12 @@ This will start the development server on [http://localhost:3000](http://localho
 
 ## Features
 
-- **Surplus food listing** for easy donation management.
 - **Civic Issue Reporting**: Report issues with real-time tracking.
 - **Secure User Authentication** and Authorization.
+- **OTP Authentication** using Firebase for secure user verification.
 - **Real-time Notifications** via SMS using Twilio.
 - **Scalable Infrastructure** with Firebase services.
+
 
 ## Our Goals 🎯
 
@@ -145,4 +146,4 @@ Please make sure to update tests as appropriate.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-<h3 align="center"> Show some ❤️ by starri
+<h3 align="center"> Show some ❤️ by starring this awesome repository! </h3>
