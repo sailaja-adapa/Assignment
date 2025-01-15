@@ -57,18 +57,24 @@ Check out the live demo of the platform [Shresta City Insight](https://shresta.v
 
 ### How to Set Up
 
-To get started with **Shresta-City Insight** 🚀, make sure you have **Node.js** and **npm** installed on your machine 💻. Then, **fork** the repo 🍴 and **clone** it to your local machine:
+To get started with **Shresta-City Insight** 🚀, make sure you have **Node.js** and **npm** installed on your machine 💻.
 
-git clone https://github.com/your-username/Shresta-City-Insight.git
+Then, **fork** the repo 🍴 and **clone** it to your local machine:
+git clone https://github.com/sailaja-adapa/Shresta.git  
 
-Next, navigate to the project directory 📂 and install the dependencies 🔧:
-cd Shresta-City-Insight
-npm install
+Next, **navigate** to the project directory 📂:
+**cd lekha**  
+
+**Install** the dependencies 🔧:
+**npm install**  
 
 Finally, start the local server to run the project locally 🌍:
-npm start
+**npm start**
 
-This will launch the development server at http://localhost:3000/ 🖥️.
+This will launch the development server at:
+👉 **http://localhost:3000/** 🖥️
+
+
 
 
 ## Tech Stack Used
